@@ -63,7 +63,7 @@ void SearchLineEdit::setBorderEnabled(bool enabled)
 {
 	if (enabled) {
 		setStyleSheet(QString("QFrame { background: %1; border: 1px solid %2; border-radius: 2px; }")
-				.arg(palette().color(QPalette::Light).name()).arg(palette().color(QPalette::Dark).name()));
+				.arg(palette().color(QPalette::Light).name(), palette().color(QPalette::Dark).name()));
 	} else {
 		setStyleSheet(QString("QFrame { background: %1; }").arg(palette().color(QPalette::Light).name()));
 	}

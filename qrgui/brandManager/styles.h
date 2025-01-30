@@ -88,15 +88,13 @@ public:
 		return pasteSystemPallete(utils::InFile::readAll(splashscreenStylePath()));
 	}
 
-	QPalette loadPalette(QString pathToPalette) const;
+	QPalette loadPalette(const QString&) const;
 
 	QPalette loadDarkWindowsPalette() const {
 		return loadPalette(darkWindowsPalettePath());
 	}
 
 protected:
-
-	/// 
 	QString pasteSystemPallete(QString style) const {
 		auto systemPalette(QApplication::palette());
 		return style

@@ -651,13 +651,8 @@ bool MainWindow::windowsDarkThemeAvailiable()
 	{
 		return QOperatingSystemVersion::current().microVersion() >= 17763;
 	}
-	else if ( QOperatingSystemVersion::current().majorVersion() > 10 )
-	{
-		return true;
-	}
-	else
-	{
-		return false;
+	else {
+		return QOperatingSystemVersion::current().majorVersion() > 10;
 	}
 }
 
@@ -670,15 +665,13 @@ bool MainWindow::windowsIsInDarkTheme()
 }
 
 void MainWindow::initPalette() {
-	// if (QSysInfo::productType() != "windows") return ;
-	// if (windowsDarkThemeAvailiable() && windowsIsInDarkTheme()) {
-	// 	QApplication::setPalette(
-	// 		BrandManager::styles()->loadTheme(":qrgui/brandManager/styles/startTab/background.css")
-	// 	);
-	// }
-	QApplication::setPalette(
+	if (QSysInfo::productType() != "windows") return ;
+	if (windowsDarkThemeAvailiable() && windowsIsInDarkTheme()) {
+		QApplication::setPalette(
 			BrandManager::styles()->loadDarkWindowsPalette()
 		);
+	}
+	
 }
 
 void MainWindow::setData(const QString &data, const QPersistentModelIndex &index, const int &role)

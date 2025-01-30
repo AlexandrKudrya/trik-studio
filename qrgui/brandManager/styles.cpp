@@ -21,11 +21,11 @@
 
 using namespace qReal;
 
-QPalette Styles::loadPalette(QString pathToPalette) const {
+QPalette Styles::loadPalette(const QString& pathToPalette) const {
 	QSettings settings(pathToPalette, QSettings::IniFormat);
 	QPalette palette;
 
-	const QMap<QString, QPalette::ColorRole> colorRoles = {
+	static const QMap<QString, QPalette::ColorRole> colorRoles = {
 		{"Window", QPalette::Window},
 		{"WindowText", QPalette::WindowText},
 		{"Base", QPalette::Base},
@@ -47,9 +47,9 @@ QPalette Styles::loadPalette(QString pathToPalette) const {
 		QPalette::ColorGroup colorGroup = (QString(group) == "PaletteDisabled") ? QPalette::Disabled : QPalette::Active;
 
 		for (auto it = colorRoles.begin(); it != colorRoles.end(); ++it) {
-			QStringList rgb = settings.value(QString(group) + "/" + it.key()).toStringList();
+			QString rgb = "#" + settings.value(QString(group) + "/" + it.key()).toString();
 			if (!rgb.isEmpty()) {
-				QColor color(rgb[0].toInt(), rgb[1].toInt(), rgb[2].toInt());
+				QColor color(rgb);
 				palette.setColor(colorGroup, it.value(), color);
 			}
 		}

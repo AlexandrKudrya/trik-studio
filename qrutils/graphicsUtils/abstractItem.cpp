@@ -484,7 +484,7 @@ QStringList AbstractItem::getBrushStyleList()
 	return { "None", "Solid" };
 }
 
-QIcon AbstractItem::loadThemedIcon(QString path, QColor color) {
+QIcon AbstractItem::loadThemedIcon(const QString& path, QColor color) {
 	QPixmap image(path);
 	QPainter pt(&image);
 	pt.setCompositionMode(QPainter::CompositionMode_SourceIn);
@@ -493,7 +493,7 @@ QIcon AbstractItem::loadThemedIcon(QString path, QColor color) {
 	return QIcon(image);
 }
 
-QIcon AbstractItem::loadTextColorIcon(QString path) {
+QIcon AbstractItem::loadTextColorIcon(const QString& path) {
 	auto text_color = QApplication::palette().color(QPalette::Text);
 	return loadThemedIcon(path, text_color);
 }
