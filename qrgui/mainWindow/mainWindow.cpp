@@ -665,13 +665,11 @@ bool MainWindow::windowsIsInDarkTheme()
 }
 
 void MainWindow::initPalette() {
-	if (QSysInfo::productType() != "windows") return ;
-	if (windowsDarkThemeAvailiable() && windowsIsInDarkTheme()) {
-		QApplication::setPalette(
-			BrandManager::styles()->loadDarkWindowsPalette()
-		);
+	if (QSysInfo::productType() != "windows") {
+		return;
+	} if (!windowsDarkThemeAvailiable() || !windowsIsInDarkTheme()) {
+		return;
 	}
-	
 }
 
 void MainWindow::setData(const QString &data, const QPersistentModelIndex &index, const int &role)

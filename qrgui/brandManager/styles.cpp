@@ -54,6 +54,5 @@ QPalette Styles::loadPalette(const QString& pathToPalette) const {
 			}
 		}
 	}
-
 	return palette;
 }
