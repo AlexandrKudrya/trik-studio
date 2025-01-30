@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/styles">
+        <file>palettes/darkWindowsPalette.ini</file>
         <file>splashscreen/splashscreen.css</file>
         <file>startTab/background.css</file>
         <file>startTab/button.css</file>
@@ -9,6 +10,5 @@
         <file>startTab/projectsManagementBackground.css</file>
         <file>startTab/recentProjectsBackground.css</file>
         <file>startTab/substrate.css</file>
-        <file>palettes/darkWindowsPalette.ini</file>
     </qresource>
 </RCC>
