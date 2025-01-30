@@ -26,6 +26,7 @@ HEADERS += \
 
 SOURCES += \
 	$$PWD/brandManager.cpp \
+	$$PWD/styles.cpp \
 
 RESOURCES += \
 	$$PWD/fonts/fonts.qrc \
