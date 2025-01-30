@@ -670,6 +670,8 @@ void MainWindow::initPalette() {
 	} if (!windowsDarkThemeAvailiable() || !windowsIsInDarkTheme()) {
 		return;
 	}
+	BrandManager::styles()->loadDarkWindowsPalette();
+
 }
 
 void MainWindow::setData(const QString &data, const QPersistentModelIndex &index, const int &role)
