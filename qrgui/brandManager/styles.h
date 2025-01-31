@@ -88,7 +88,7 @@ public:
 		return loadSystemPallete(utils::InFile::readAll(splashscreenStylePath()));
 	}
 
-	QPalette loadPalette(QString pathToPalette) const;
+	QPalette loadPalette(const QString& pathToPalette) const;
 
 protected:
 

@@ -21,11 +21,11 @@
 
 using namespace qReal;
 
-QPalette Styles::loadPalette(QString pathToPalette) const {
+QPalette Styles::loadPalette(const QString& pathToPalette) const {
 	QSettings settings(pathToPalette, QSettings::IniFormat);
 	QPalette palette;
 
-	const QMap<QString, QPalette::ColorRole> colorRoles = {
+	static QMap<QString, QPalette::ColorRole> colorRoles = {
 		{"Window", QPalette::Window},
 		{"WindowText", QPalette::WindowText},
 		{"Base", QPalette::Base},

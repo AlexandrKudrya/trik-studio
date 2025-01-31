@@ -650,14 +650,8 @@ bool MainWindow::windowsDarkThemeAvailiable()
 	if ( QOperatingSystemVersion::current().majorVersion() == 10 )
 	{
 		return QOperatingSystemVersion::current().microVersion() >= 17763;
-	}
-	else if ( QOperatingSystemVersion::current().majorVersion() > 10 )
-	{
-		return true;
-	}
-	else
-	{
-		return false;
+	} else {
+		return QOperatingSystemVersion::current().majorVersion() > 10;
 	}
 }
 
@@ -670,10 +664,11 @@ bool MainWindow::windowsIsInDarkTheme()
 }
 
 void MainWindow::initPalette() {
-	// if (QSysInfo::productType() != "windows") return ;
-	// if (windowsDarkThemeAvailiable() && windowsIsInDarkTheme()) {
-		
-	// }
+	if (QSysInfo::productType() != "windows") {
+		return;
+	} if (!windowsDarkThemeAvailiable() || !windowsIsInDarkTheme()) {
+		return;
+	}
 	QApplication::setPalette(BrandManager::styles()->loadPalette(
 		QCoreApplication::applicationDirPath() +
 		"/palettes/darkWindowsPalette.ini"
