@@ -50,7 +50,11 @@ QPalette Styles::loadPalette(const QString& pathToPalette) const {
 			QStringList rgb = settings.value(QString(group) + "/" + it.key()).toStringList();
 			if (!rgb.isEmpty()) {
 				QColor color(rgb[0].toInt(), rgb[1].toInt(), rgb[2].toInt());
-				palette.setColor(colorGroup, it.value(), color);
+				if (colorGroup == QPalette::Disabled) {
+					palette.setColor(colorGroup, it.value(), color);
+				} else {
+					palette.setColor(it.value(), color);
+				}
 			}
 		}
 	}
