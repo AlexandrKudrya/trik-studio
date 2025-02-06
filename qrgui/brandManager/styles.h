@@ -91,8 +91,6 @@ public:
 	QPalette loadPalette(const QString& pathToPalette) const;
 
 protected:
-
-	/// 
 	QString loadSystemPallete(QString style) const {
 		auto systemPalette(QApplication::palette());
 		return style

@@ -98,9 +98,7 @@ private slots:
 	void onRobotModelActionChecked(QObject *robotModelObject);
 
 private:
-	QString kitIdOf(kitBase::robotModel::RobotModelInterface &model) const;
-
-	QIcon loadThemedIcon(QString svg_path, QColor color);
+    QString kitIdOf(kitBase::robotModel::RobotModelInterface &model) const;
 
 	bool mEnableRobotActions {};
 

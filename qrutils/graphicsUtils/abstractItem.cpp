@@ -484,7 +484,7 @@ QStringList AbstractItem::getBrushStyleList()
 	return { "None", "Solid" };
 }
 
-QIcon AbstractItem::loadThemedIcon(const QString& path, QColor color) {
+QIcon AbstractItem::loadThemedIcon(const QString& path, const QColor& color) {
 	QPixmap image(path);
 	QPainter pt(&image);
 	pt.setCompositionMode(QPainter::CompositionMode_SourceIn);
