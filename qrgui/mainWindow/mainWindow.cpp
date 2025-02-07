@@ -650,8 +650,8 @@ bool MainWindow::windowsDarkThemeAvailiable()
 	if ( QOperatingSystemVersion::current().majorVersion() == 10 )
 	{
 		return QOperatingSystemVersion::current().microVersion() >= 17763;
-    }
-    return QOperatingSystemVersion::current().majorVersion() > 10;
+	}
+	return QOperatingSystemVersion::current().majorVersion() > 10;
 }
 
 bool MainWindow::windowsIsInDarkTheme()
